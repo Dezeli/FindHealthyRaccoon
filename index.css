@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dongle:wght@300&display=swap');
+
+
+body{
+    width: 800px;
+}
+
+/* header */
+header{
+    border: 1px solid black;
+}
+h1 {
+    position: relative;
+    padding: 15px;
+    margin: 0px;
+    background-color: lightgray;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: #080808;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+}
+
+/* main */
+main{
+    border: 1px solid black;
+    height: 500px;
+    background-image: url(Images/menu_bg.png);
+    background-size: 100% 100%;
+}
+#mainMenu {
+    display: flex;
+    align-content: flex-end;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 100px 60px;
+}
+#mainMenu a{
+    margin: 25px;
+
+}
+#return {
+    display: none;
+    align-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 20px 10px 15px 10px ;
+}
+#bears {
+    display: none;
+    margin: 70px 16px 0px 16px;
+}
+#choose{
+    display: none;
+    margin: 0px 16px 0px 16px;
+}
+#choose a{
+    margin: 0px 71px;
+}
+#round{
+    display: none;
+    margin: 0px 30px 0px 310px;
+}
+
+#how{
+    display: none;
+    margin: 0px 30px 0px 310px;
+}
+#how h3{
+    font-weight: 200;
+    color: #333;
+    font-size: 60px;
+    font-family: 'Black Han Sans', sans-serif;
+    margin: 0px;
+}
+.menuBtn {
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+	background-color:#f9f9f9;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:10px 35px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.menuBtn:hover {
+	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+	background-color:#e9e9e9;
+}
+.menuBtn:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+/* footer */
+footer{
+    background: #432;
+    text-align: center;
+    padding: 10px 0;
+}
+footer p{
+    color : #fff;
+    font-size: 0.875rem;
+}
