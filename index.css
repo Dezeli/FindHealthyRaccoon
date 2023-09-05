@@ -33,48 +33,53 @@ main{
 #mainMenu {
     display: flex;
     align-content: flex-end;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    margin: 100px 60px;
+    margin: 260px auto auto 25px;
 }
 #mainMenu a{
-    margin: 25px;
+    margin: 10px;
 
 }
 #return {
     display: none;
     align-content: flex-start;
-    flex-direction: column;
     flex-wrap: wrap;
-    margin: 20px 10px 15px 10px ;
+    margin: 20px 30px;
 }
-#bears {
-    display: none;
-    margin: 70px 16px 0px 16px;
-}
-#choose{
+#racs {
     display: none;
     margin: 0px 16px 0px 16px;
 }
-#choose a{
-    margin: 0px 71px;
-}
-#round{
+#choose{
     display: none;
-    margin: 0px 30px 0px 310px;
+    margin: 100px 16px 0px 16px;
+}
+#choose a{
+    margin: 0px 69px;
+}
+#stage{
+    display: none;
+    flex-direction: column;
+    margin: 100px 30px 0px 350px;
+}
+#stage h3{
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+    font-weight: 10000;
+    font-size: 60px;
+    color: #080808;
+    margin: 50px 0px 50px 0px;
+}
+#stage p{
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+    font-weight: 1000;
+    font-size: 35px;
+    color: #080808;
+    margin: 0px 0px 0px 0px;
 }
 
-#how{
-    display: none;
-    margin: 0px 30px 0px 310px;
-}
-#how h3{
-    font-weight: 200;
-    color: #333;
-    font-size: 60px;
-    font-family: 'Black Han Sans', sans-serif;
-    margin: 0px;
-}
 .menuBtn {
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
 	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);

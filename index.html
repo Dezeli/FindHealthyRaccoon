@@ -13,12 +13,17 @@
         </header>
         <main id="bg">
             <div id="mainMenu">
-                <a href="#;" onClick="showGame()" class="menuBtn">게임시작</a>
-                <a href="#;" onClick="showHow()" class="menuBtn">게임방법</a>
-                <a href="#;" onClick="showRank()" class="menuBtn">게임랭킹</a>
+                <a href="#;" onClick="showStage(1)" class="menuBtn">Start</a>
+                <a href="#;" onClick="showHow()" class="menuBtn">How</a>
+                <a href="#;" onClick="showRank()" class="menuBtn">Rank</a>
             </div>
             <div id="return">
-                <a href="#;" onClick="showMenu()" class="menuBtn">돌아가기</a>
+                <a href="#;" onClick="showMenu()" class="menuBtn">Back</a>
+            </div>
+            <div id="choose">
+                <a href="#;" class="menuBtn">YOU</a>
+                <a href="#;" class="menuBtn">YOU</a>
+                <a href="#;" class="menuBtn">YOU</a>
             </div>
             <div id="racs">
                 <table>
@@ -27,24 +32,19 @@
                     <td><img id="racC" src="Images/SitRaccoon.png"></td>
                 </table>
             </div>
-            <div id="choose">
-                <a href="#;" class="menuBtn">선택</a>
-                <a href="#;" class="menuBtn">선택</a>
-                <a href="#;" class="menuBtn">선택</a>
-            </div>
-            <div id="round">
-                <h3>1라운드</h3>
-                <p>현재 점수 : 0점</p>
-            </div>
-            <div id="how">
-                <h3>게임 설명</h3>
+            
+            <div id="stage">
+                <h3>Stage 0</h3>
+                <p>Score 0</p>
             </div>
         </main>
+
+
+
         <footer>
                 <p><small>Ver 1.0.0 &copy; 2023 DEZELI</small></p>
                 <p><small>haterecursive@gmail.com</small></p>
         </footer>
-
         <script src="main.js"></script>
     </body>
 </html>
