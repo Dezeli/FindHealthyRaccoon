@@ -6,22 +6,23 @@ const racA = document.getElementById("racA");
 const racB = document.getElementById("racB");
 const racC = document.getElementById("racC");
 const chooseBtns = document.getElementById("choose");
-const stage = document.getElementById("stage")
+const pointLabels = document.getElementById("point");
+const stage = document.getElementById("stage");
 
 
 var score = 0;
+var stagenum = 0;
 
-function showStage(stagenum){
+function showStage(){
     bg.style.backgroundImage = "url(Images/stage_bg.png)";
     mainBtns.style.display = "none";
     stage.style.display = "flex";
 
+    stagenum += 1
     var stageTag = stage.getElementsByTagName("h3")[0];
     var scoreTag = stage.getElementsByTagName("p")[0];
-
     stageTag.innerText = "Stage " + stagenum;
     scoreTag.innerText = "Score : " + score;
-    stagenum += 1;
 
     setTimeout(showGame, 3000);
 }
@@ -31,9 +32,20 @@ function showGame(){
     returnBtn.style.display = "flex";
     racs.style.display = "flex";
     chooseBtns.style.display = "flex";
+    chooseBtns.style.visibility = "hidden";
+    pointLabels.style.display = "flex";
+    pointLabels.style.visibility = "hidden";
     stage.style.display = "none";
 
     var timer = 0;
+    var aCnt = 0;
+    var bCnt = 0;
+    var cCnt = 0;
+
+    
+}
+
+function gameStart(){
     function frame(){
         racmove = requestAnimationFrame(frame);
         timer++;
@@ -48,9 +60,7 @@ function showGame(){
             racC.src = 'Images/SleepRaccoon.png';
         }
     }
-
     frame()
-
 }
 
 function showHow(){

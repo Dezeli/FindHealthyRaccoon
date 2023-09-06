@@ -51,9 +51,21 @@ main{
     display: none;
     margin: 0px 16px 0px 16px;
 }
+#point{
+    display: none;
+    margin: 40px 16px 10px 16px;
+}
+#point p{
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+    font-weight: 10000;
+    font-size: 60px;
+    color: #080808;
+    margin : 0px 110px;
+}
 #choose{
     display: none;
-    margin: 100px 16px 0px 16px;
+    margin: 0px 0px 0px 16px;
 }
 #choose a{
     margin: 0px 69px;
