@@ -11,25 +11,27 @@ const stage = document.getElementById("stage");
 
 
 var score = 0;
-var stagenum = 0;
+var stageNum = 0;
+var moveCnt = 0;
+let stageMove = [[],[],[]];
 
 function showStage(){
     bg.style.backgroundImage = "url(Images/stage_bg.png)";
     mainBtns.style.display = "none";
     stage.style.display = "flex";
 
-    stagenum += 1
+    stageNum += 1
     var stageTag = stage.getElementsByTagName("h3")[0];
     var scoreTag = stage.getElementsByTagName("p")[0];
-    stageTag.innerText = "Stage " + stagenum;
+    stageTag.innerText = "Stage " + stageNum;
     scoreTag.innerText = "Score : " + score;
-
-    setTimeout(showGame, 3000);
+    const stageAudio = new Audio("Sounds/Stage.mp3");
+    stageAudio.play();
+    setTimeout(showGame, 7000);
 }
 
 function showGame(){
     bg.style.backgroundImage = "url(Images/game_bg.png)";
-    returnBtn.style.display = "flex";
     racs.style.display = "flex";
     chooseBtns.style.display = "flex";
     chooseBtns.style.visibility = "hidden";
@@ -37,44 +39,76 @@ function showGame(){
     pointLabels.style.visibility = "hidden";
     stage.style.display = "none";
 
-    var timer = 0;
-    var aCnt = 0;
-    var bCnt = 0;
-    var cCnt = 0;
+    makeGame()
+}   
 
-    
+function makeGame(){
+    moveCnt = stageNum**2 + 3;
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < moveCnt; j++){
+            var randNum = Math.floor(Math.random()*3);
+            if(randNum==0){
+                stageMove[i].push("Sit");
+            }
+            else if(randNum==1){
+                stageMove[i].push("Eat");
+            }
+            else{
+                stageMove[i].push("Sleep");
+            }
+        }
+    }
+    const readyAudio = new Audio("Sounds/Ready.mp3");
+    readyAudio.play();
+    setTimeout(startGame, 6000)
 }
 
-function gameStart(){
+function startGame(){
+    const eatAudio = new Audio("Sounds/Eat.mp3")
+    const sleepAudio = new Audio("Sounds/Snore.mp3")
+    let timer = 0;
+    let move = 0;
     function frame(){
         racmove = requestAnimationFrame(frame);
         timer++;
         if(timer%120==0){
-            racA.src = 'Images/SitRaccoon.png';
-            racB.src = 'Images/SitRaccoon.png';
-            racC.src = 'Images/SitRaccoon.png';
+            racA.src = "Images/SitRaccoon.png";
+            racB.src = "Images/SitRaccoon.png";
+            racC.src = "Images/SitRaccoon.png";
+            move += 1;
         }
         else if(timer%60==0){
-            racA.src = 'Images/SleepRaccoon.png';
-            racB.src = 'Images/SleepRaccoon.png';
-            racC.src = 'Images/SleepRaccoon.png';
+            if(stageMove[0][move]=="Eat"||stageMove[1][move]=="Eat"||stageMove[2][move]=="Eat"){
+                eatAudio.play();
+            }
+            if(stageMove[0][move]=="Sleep"||stageMove[1][move]=="Sleep"||stageMove[2][move]=="Sleep"){
+                sleepAudio.play();
+            }
+            racA.src = `Images/${stageMove[0][move]}Raccoon.png`;
+            racB.src = `Images/${stageMove[1][move]}Raccoon.png`;
+            racC.src = `Images/${stageMove[2][move]}Raccoon.png`;
+        }
+        if(moveCnt*120==timer){ 
+            cancelAnimationFrame(racmove);
         }
     }
     frame()
+
+    
 }
 
 function showHow(){
     bg.style.backgroundImage = "url(Images/intro_bg.png)";
     mainBtns.style.display = "none";
     returnBtn.style.display = "flex";
-    returnBtn.style.alignContent = "flex-end";
+    returnBtn.style.float = "right";
 }
 
 function showRank(){
     bg.style.backgroundImage = "url(Images/rank_bg.png)";
     mainBtns.style.display = "none";
     returnBtn.style.display = "flex";
-    returnBtn.style.alignContent = "flex-start";
+    returnBtn.style.float = "left";
 }
 
 
@@ -84,6 +118,5 @@ function showMenu(){
     returnBtn.style.display = "none";
     racs.style.display = "none";
     chooseBtns.style.display = "none";
-    cancelAnimationFrame(racmove);
 }
 

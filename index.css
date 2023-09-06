@@ -5,30 +5,14 @@ body{
     width: 800px;
 }
 
-/* header */
-header{
-    border: 1px solid black;
-}
-h1 {
-    position: relative;
-    padding: 15px;
-    margin: 0px;
-    background-color: lightgray;
-    font-family: "Raleway", sans-serif;
-    font-weight: 500;
-    font-size: 40px;
-    color: #080808;
-    -webkit-transition: all 0.4s ease 0s;
-    -o-transition: all 0.4s ease 0s;
-    transition: all 0.4s ease 0s;
-}
-
 /* main */
 main{
     border: 1px solid black;
     height: 500px;
     background-image: url(Images/menu_bg.png);
     background-size: 100% 100%;
+    margin-top: 3ex;
+    flex-direction: column;
 }
 #mainMenu {
     display: flex;
@@ -43,9 +27,9 @@ main{
 }
 #return {
     display: none;
-    align-content: flex-start;
     flex-wrap: wrap;
     margin: 20px 30px;
+    width: auto;
 }
 #racs {
     display: none;
@@ -53,7 +37,7 @@ main{
 }
 #point{
     display: none;
-    margin: 40px 16px 10px 16px;
+    margin: 100px 16px 10px 16px;
 }
 #point p{
     font-family: "Raleway", sans-serif;
