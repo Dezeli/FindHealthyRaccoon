@@ -14,12 +14,17 @@ var score = 0;
 var stageNum = 0;
 var moveCnt = 0;
 let stageMove = [[],[],[]];
+let stageCnt = [0, 0, 0];
 
 function showStage(){
     bg.style.backgroundImage = "url(Images/stage_bg.png)";
     mainBtns.style.display = "none";
     stage.style.display = "flex";
-
+    racs.style.display = "none";
+    chooseBtns.style.display = "none";
+    pointLabels.style.display = "none";
+    stageMove = [[],[],[]];
+    stageCnt = [0, 0, 0];
     stageNum += 1
     var stageTag = stage.getElementsByTagName("h3")[0];
     var scoreTag = stage.getElementsByTagName("p")[0];
@@ -49,12 +54,15 @@ function makeGame(){
             var randNum = Math.floor(Math.random()*3);
             if(randNum==0){
                 stageMove[i].push("Sit");
+                stageCnt[i] += 0;
             }
             else if(randNum==1){
                 stageMove[i].push("Eat");
+                stageCnt[i] += 1;
             }
             else{
                 stageMove[i].push("Sleep");
+                stageCnt[i] -= 1;
             }
         }
     }
@@ -64,8 +72,8 @@ function makeGame(){
 }
 
 function startGame(){
-    const eatAudio = new Audio("Sounds/Eat.mp3")
-    const sleepAudio = new Audio("Sounds/Snore.mp3")
+    const eatAudio = new Audio("Sounds/Eat.mp3");
+    const sleepAudio = new Audio("Sounds/Snore.mp3");
     let timer = 0;
     let move = 0;
     function frame(){
@@ -88,13 +96,50 @@ function startGame(){
             racB.src = `Images/${stageMove[1][move]}Raccoon.png`;
             racC.src = `Images/${stageMove[2][move]}Raccoon.png`;
         }
-        if(moveCnt*120==timer){ 
+        if(moveCnt*120==timer){
+            chooseBtns.style.visibility = "visible";
             cancelAnimationFrame(racmove);
         }
     }
-    frame()
+    frame()    
+}
 
+function chooseAnswer(racNum){
+    chooseBtns.style.visibility = "hidden";
+    const answerAudio = new Audio("Sounds/Answer.mp3");
+    answerAudio.play();
+
+
+    setTimeout(()=>showAnswer(racNum), 6000);
+}
+
+function showAnswer(racNum){
+    var stageCntpTags = pointLabels.getElementsByTagName("p");
+    for(let i = 0; i < 3; i++){
+        stageCntpTags[i].innerText = stageCnt[i];
+    }
+    pointLabels.style.visibility = "visible";
     
+    if(stageCnt[racNum]==Math.max(...stageCnt)){
+        const correctAudio = new Audio("Sounds/Correct.mp3");
+        correctAudio.play();
+        setTimeout(showStage, 3000);
+    }
+    else{
+        const wrongAudio = new Audio("Sounds/Wrong.wav");
+        wrongAudio.play();
+        setTimeout(gameOver, 3000);
+    }
+}
+
+function gameOver(){
+    bg.style.backgroundImage = "url(Images/over_bg.png)";
+    racs.style.display = "none";
+    pointLabels.style.display = "none";
+    const overAudio = new Audio("Sounds/GameOver.mp3");
+    overAudio.play();
+
+    setTimeout(showMenu, 7000);
 }
 
 function showHow(){
