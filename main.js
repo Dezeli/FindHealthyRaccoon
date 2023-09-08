@@ -163,5 +163,6 @@ function showMenu(){
     returnBtn.style.display = "none";
     racs.style.display = "none";
     chooseBtns.style.display = "none";
+    stageNum = 0;
 }
 
