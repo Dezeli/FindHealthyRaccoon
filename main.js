@@ -51,18 +51,23 @@ function makeGame(){
     moveCnt = stageNum**2 + 3;
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < moveCnt; j++){
-            var randNum = Math.floor(Math.random()*3);
+            if (stageNum<6){
+                var randNum = Math.floor(Math.random()*2);
+            }
+            else{
+                var randNum = Math.floor(Math.random()*3);
+            }
             if(randNum==0){
                 stageMove[i].push("Sit");
                 stageCnt[i] += 0;
             }
             else if(randNum==1){
-                stageMove[i].push("Eat");
+                stageMove[i].push("Sleep");
                 stageCnt[i] += 1;
             }
             else{
-                stageMove[i].push("Sleep");
-                stageCnt[i] -= 1;
+                stageMove[i].push("Eat");
+                stageCnt[i] += 2;
             }
         }
     }
