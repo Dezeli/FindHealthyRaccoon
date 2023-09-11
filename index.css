@@ -46,8 +46,8 @@ main{
     font-weight: 100000;
     font-size: 60px;
     color: #080808;
-    margin : 0px 85px;
-    padding : 0px 30px;
+    margin : 0px 74px;
+    width: 100px;
 }
 #choose{
     display: none;
@@ -109,9 +109,11 @@ main{
 footer{
     background: #432;
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 0;
 }
 footer p{
+    font-family: "Hand";
     color : #fff;
-    font-size: 0.875rem;
+    font-size: 20px;
+    margin: 2px;
 }

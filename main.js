@@ -15,6 +15,9 @@ var stageNum = 0;
 var moveCnt = 0;
 let stageMove = [[],[],[]];
 let stageCnt = [0, 0, 0];
+let moveCnts = [30, 6, 10, 14, 16, 18, 22];
+let speeds = [60, 120, 120, 100, 100, 80, 80];
+
 
 function showStage(){
     bg.style.backgroundImage = "url(Images/stage_bg.png)";
@@ -48,10 +51,10 @@ function showGame(){
 }   
 
 function makeGame(){
-    moveCnt = stageNum**2 + 3;
+    moveCnt = moveCnts[stageNum%7];
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < moveCnt; j++){
-            if (stageNum<6){
+            if (stageNum<=7){
                 var randNum = Math.floor(Math.random()*2);
             }
             else{
@@ -84,24 +87,26 @@ function startGame(){
     function frame(){
         racmove = requestAnimationFrame(frame);
         timer++;
-        if(timer%120==0){
+        if(timer%(speeds[stageNum%7])==0){
             racA.src = "Images/SitRaccoon.png";
             racB.src = "Images/SitRaccoon.png";
             racC.src = "Images/SitRaccoon.png";
             move += 1;
         }
-        else if(timer%60==0){
-            if(stageMove[0][move]=="Eat"||stageMove[1][move]=="Eat"||stageMove[2][move]=="Eat"){
-                eatAudio.play();
-            }
+        else if(timer%((speeds[stageNum%7])/2)==0){
             if(stageMove[0][move]=="Sleep"||stageMove[1][move]=="Sleep"||stageMove[2][move]=="Sleep"){
+                sleepAudio.ended = true;
                 sleepAudio.play();
+            }
+            if(stageMove[0][move]=="Eat"||stageMove[1][move]=="Eat"||stageMove[2][move]=="Eat"){
+                eatAudio.ended = true;
+                eatAudio.play();
             }
             racA.src = `Images/${stageMove[0][move]}Raccoon.png`;
             racB.src = `Images/${stageMove[1][move]}Raccoon.png`;
             racC.src = `Images/${stageMove[2][move]}Raccoon.png`;
         }
-        if(moveCnt*120==timer){
+        if(moveCnt*(speeds[stageNum%7])==timer){
             chooseBtns.style.visibility = "visible";
             cancelAnimationFrame(racmove);
         }
