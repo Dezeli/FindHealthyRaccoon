@@ -95,11 +95,11 @@ function startGame(){
         }
         else if(timer%((speeds[stageNum%7])/2)==0){
             if(stageMove[0][move]=="Sleep"||stageMove[1][move]=="Sleep"||stageMove[2][move]=="Sleep"){
-                sleepAudio.ended = true;
+                sleepAudio.currentTime = 0;
                 sleepAudio.play();
             }
             if(stageMove[0][move]=="Eat"||stageMove[1][move]=="Eat"||stageMove[2][move]=="Eat"){
-                eatAudio.ended = true;
+                eatAudio.currentTime = 0;
                 eatAudio.play();
             }
             racA.src = `Images/${stageMove[0][move]}Raccoon.png`;
@@ -133,6 +133,7 @@ function showAnswer(racNum){
     if(stageCnt[racNum]==Math.max(...stageCnt)){
         const correctAudio = new Audio("Sounds/Correct.mp3");
         correctAudio.play();
+        score += stageNum*moveCnts[stageNum%7]-(Math.max(...stageCnt)-Math.min(...stageCnt));
         setTimeout(showStage, 3000);
     }
     else{
@@ -174,5 +175,6 @@ function showMenu(){
     racs.style.display = "none";
     chooseBtns.style.display = "none";
     stageNum = 0;
+    score = 0;
 }
 
