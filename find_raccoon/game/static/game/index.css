@@ -1,0 +1,119 @@
+@font-face {
+    font-family: "Hand";
+    src: url("Fonts/나눔손글씨\ 느릿느릿체.ttf");
+}
+body{
+    width: 800px;
+}
+
+/* main */
+main{
+    border: 1px solid black;
+    height: 500px;
+    background-image: url(Images/menu_bg.png);
+    background-size: 100% 100%;
+    margin-top: 3ex;
+    flex-direction: column;
+}
+#mainMenu {
+    display: flex;
+    align-content: flex-end;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 260px auto auto 25px;
+}
+#mainMenu a{
+    margin: 10px;
+
+}
+#return {
+    display: none;
+    flex-wrap: wrap;
+    margin: 20px 30px;
+    width: auto;
+}
+#racs {
+    display: none;
+    margin: 0px 16px 0px 16px;
+}
+#point{
+    display: none;
+    margin: 100px 16px 10px 16px;
+}
+#point p{
+    font-family: "Hand";
+    text-align: center;
+    font-weight: 100000;
+    font-size: 60px;
+    color: #080808;
+    margin : 0px 74px;
+    width: 100px;
+}
+#choose{
+    display: none;
+    margin: 0px 0px 0px 16px;
+}
+#choose a{
+    margin: 0px 69px;
+}
+#stage{
+    display: none;
+    flex-direction: column;
+    margin: 100px 30px 0px 350px;
+}
+#stage h3{
+    font-family: "Hand";
+    text-align: center;
+    font-weight: 10000;
+    font-size: 100px;
+    color: #080808;
+    margin: 30px 0px 50px 0px;
+}
+#stage p{
+    font-family: "Hand";
+    text-align: center;
+    font-weight: 1000;
+    font-size: 50px;
+    color: #080808;
+    margin: 0px 0px 0px 0px;
+}
+
+.menuBtn {
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+	background-color:#f9f9f9;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Hand;
+	font-size:30px;
+	font-weight:bold;
+	padding:10px 35px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.menuBtn:hover {
+	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+	background-color:#e9e9e9;
+}
+.menuBtn:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+/* footer */
+footer{
+    background: #432;
+    text-align: center;
+    padding: 15px 0;
+}
+footer p{
+    font-family: "Hand";
+    color : #fff;
+    font-size: 20px;
+    margin: 2px;
+}
