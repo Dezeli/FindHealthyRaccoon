@@ -8,6 +8,7 @@ const racC = document.getElementById("racC");
 const chooseBtns = document.getElementById("choose");
 const pointLabels = document.getElementById("point");
 const stage = document.getElementById("stage");
+const rank = document.getElementById("rank")''
 
 
 var score = 0;
@@ -48,7 +49,7 @@ function showGame(){
     stage.style.display = "none";
 
     makeGame()
-}   
+}
 
 function makeGame(){
     moveCnt = moveCnts[stageNum%7];
@@ -165,8 +166,8 @@ function showRank(){
     mainBtns.style.display = "none";
     returnBtn.style.display = "flex";
     returnBtn.style.float = "left";
+    rank.style.display = "flex";
 }
-
 
 function showMenu(){
     bg.style.backgroundImage = "url(static/game/Images/menu_bg.png)";
@@ -174,6 +175,7 @@ function showMenu(){
     returnBtn.style.display = "none";
     racs.style.display = "none";
     chooseBtns.style.display = "none";
+    rank.style.display = "none";
     stageNum = 0;
     score = 0;
 }

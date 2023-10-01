@@ -42,6 +42,34 @@
                 <h3>Stage 0</h3>
                 <p>Score 0</p>
             </div>
+            {% block content %}
+            <div id="rank">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Score</th>
+                        <th>Date</th>
+                    </tr>
+                    {% if User_data %}
+                    {% for data in User_data %}
+                    <tr>
+                        <td>{{ data.name }}</td>
+                        <td>{{ data.score }}</td>
+                        <td>{{ data.date }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% else %}
+                    <tr>
+                        <td>Error</td>
+                        <td>No Data</td>
+                        <td>Play Game</td>
+                    </tr>
+                    {% endif %}
+                </table>
+                
+                
+            </div>
+            {% endblock %}
         </main>
 
 
