@@ -80,19 +80,25 @@ main{
 
 #rank{
     display: none;
+    float: right;
 }
 #rank table{
     border: 5;
     border-color: black;
     flex-direction: row;
+    margin: 120px 60px 0px 0px;
 }
 #rank th{
     font-family: "Hand";
-    font-size: 20px;
+    font-size: 24px;
+    text-align: left;
+    padding: 0px 10px;
 }
 #rank td{
     font-family: "Hand";
-    font-size: 20px;
+    font-size: 24px;
+    padding: 0px 10px;
+    text-align: center;
 }
 
 .menuBtn {

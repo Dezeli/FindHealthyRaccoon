@@ -8,7 +8,7 @@ const racC = document.getElementById("racC");
 const chooseBtns = document.getElementById("choose");
 const pointLabels = document.getElementById("point");
 const stage = document.getElementById("stage");
-const rank = document.getElementById("rank")''
+const rank = document.getElementById("rank");
 
 
 var score = 0;
