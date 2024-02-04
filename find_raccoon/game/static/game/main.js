@@ -151,7 +151,29 @@ function gameOver(){
     const overAudio = new Audio("static/game/Sounds/GameOver.mp3");
     overAudio.play();
 
-    setTimeout(showMenu, 7000);
+    var name = prompt("Input Nickname", "Ghost")
+
+    let param = {
+        'name': name,
+        'score' : score,
+    }
+    $.ajax({
+        url : saveurl,
+        type: 'POST',
+        data: JSON.stringify(param),
+        success: function (data) {
+            console.log("SAVED")
+        },
+        error: function() {
+            console.log("ERROR")
+        }
+    });
+
+    setTimeout(refresh, 7000);
+}
+
+function refresh(){
+    location.reload();
 }
 
 function showHow(){

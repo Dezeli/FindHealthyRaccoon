@@ -6,6 +6,7 @@
         <title>Find Healthy Raccoon</title>
         <link rel="stylesheet" href="{% static 'game/index.css' %}">
         <link rel="shortcut icon" href="{% static 'game/Images/raccoon.ico' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     </head>
     <body>
         <main id="bg">
@@ -81,6 +82,9 @@
                 <p><small>Ver 1.0.0 &copy; 2023 DEZELI</small></p>
                 <p><small>haterecursive@gmail.com</small></p>
         </footer>
+        <script>
+            const saveurl = "{% url 'game:save' %}"
+        </script>
         <script src="{% static 'game/main.js' %}"></script>
     </body>
 </html>
