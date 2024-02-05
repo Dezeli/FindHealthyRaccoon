@@ -19,7 +19,7 @@ PC 서버에서 확인해 볼 수 있습니다.
     이로 인해 플레이어의 점수 저장이 가능해졌습니다.
 ***
 ## 실행사진
-<img src="https://github.com/Dezeli/FindHealthyRaccoon/assets/142760384/b7ac1712-9415-4607-b8cc-44909b70922d"  width="900" height="500">
-<img src="https://github.com/Dezeli/FindHealthyRaccoon/assets/142760384/29fa856b-ad52-4871-afd5-a466b9037d58"  width="900" height="500">
-<img src="https://github.com/Dezeli/FindHealthyRaccoon/assets/142760384/2c9d9b6f-9c2b-413d-ae21-b91547f52627"  width="900" height="500">
-<img src="https://github.com/Dezeli/FindHealthyRaccoon/assets/142760384/923ae2e6-c478-488b-8e1a-6145518b6828"  width="900" height="500">
+<img src="https://github.com/Dezeli/FindHealthyRaccoon/assets/142760384/b7ac1712-9415-4607-b8cc-44909b70922d"  width="700" height="500">
+<img src="https://github.com/Dezeli/FindHealthyRaccoon/assets/142760384/29fa856b-ad52-4871-afd5-a466b9037d58"  width="700" height="500">
+<img src="https://github.com/Dezeli/FindHealthyRaccoon/assets/142760384/2c9d9b6f-9c2b-413d-ae21-b91547f52627"  width="700" height="500">
+<img src="https://github.com/Dezeli/FindHealthyRaccoon/assets/142760384/923ae2e6-c478-488b-8e1a-6145518b6828"  width="700" height="500">
